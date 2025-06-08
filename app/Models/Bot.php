@@ -17,7 +17,7 @@ class Bot extends Model
             ->withTimestamps();
     }
 
-    public function artificial(): HasMany
+    public function artificials(): HasMany
     {
         return $this->hasMany(Artificial::class);
     }

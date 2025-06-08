@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('artificial', function (Blueprint $table): void {
+        Schema::create('artificials', function (Blueprint $table): void {
             $table->id();
             $table->foreignIdFor(Bot::class);
             $table->string('name');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('artificial');
+        Schema::dropIfExists('artificials');
     }
 };
