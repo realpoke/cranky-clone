@@ -6,7 +6,8 @@
             "filesystems",
             "favicon",
             "js",
-            "navlist"
+            "navlist",
+            "debugbar"
         ],
         "paths": []
     }
