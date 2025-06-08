@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Artificial;
 use App\Models\Chat;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,7 +15,7 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table): void {
             $table->id();
             $table->string('messenger_type');
-            $table->foreignIdFor(Artificial::class);
+            $table->foreignId('artificials_id');
             $table->foreignIdFor(Chat::class);
             $table->json('context_message_ids')->nullable();
             $table->timestamps();
