@@ -1,5 +1,5 @@
 <div>
-    @if($this->keySet)
+    @if(isset($this->bot->pivot) || $this->keySet)
         <form wire:key="empty" wire:submit="removeKey" class="mt-6 space-y-6">
             <flux:input
                 :label="__($bot->provider . ' - ' . $bot->description)"

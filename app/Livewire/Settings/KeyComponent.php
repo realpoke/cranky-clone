@@ -14,12 +14,7 @@ class KeyComponent extends Component
     #[Validate()]
     public string $key = '';
 
-    public bool $keySet;
-
-    public function mount(): void
-    {
-        $this->keySet = property_exists($this->bot, 'pivot') && $this->bot->pivot !== null;
-    }
+    public bool $keySet = false;
 
     public function addKey(): void
     {
