@@ -79,6 +79,13 @@ class User extends Authenticatable
         return $this->bots()->detach($bot);
     }
 
+    protected static function booted(): void
+    {
+        static::deleting(function (User $user) {
+            $user->bots()->detach();
+        });
+    }
+
     /**
      * Get the attributes that should be cast.
      *
