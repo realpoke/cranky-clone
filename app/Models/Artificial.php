@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class Artificial extends Pivot
 {
+    protected $table = 'artificials';
+
     public function messages(): HasMany
     {
         return $this->hasMany(Message::class);
