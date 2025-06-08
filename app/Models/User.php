@@ -81,7 +81,7 @@ class User extends Authenticatable
 
     protected static function booted(): void
     {
-        static::deleting(function (User $user) {
+        static::deleting(function (User $user): void {
             $user->bots()->detach();
         });
     }

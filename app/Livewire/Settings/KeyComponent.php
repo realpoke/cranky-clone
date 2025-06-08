@@ -18,7 +18,7 @@ class KeyComponent extends Component
 
     public function mount(): void
     {
-        $this->keySet = isset($this->bot->pivot);
+        $this->keySet = property_exists($this->bot, 'pivot') && $this->bot->pivot !== null;
     }
 
     public function addKey(): void
