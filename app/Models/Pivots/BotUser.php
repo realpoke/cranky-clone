@@ -9,4 +9,8 @@ class BotUser extends Pivot
     public const PIVOT_FIELDS = [
         'key',
     ];
+
+    protected $hidden = [
+        'key',
+    ];
 }

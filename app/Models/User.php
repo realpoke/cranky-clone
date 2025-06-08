@@ -63,6 +63,22 @@ class User extends Authenticatable
             ->withTimestamps();
     }
 
+    public function addBotKey(Bot $bot, string $key): bool
+    {
+        if ($this->bots()->where('bot_id', $bot->id)->exists()) {
+            return false;
+        }
+
+        $this->bots()->attach($bot->id, ['key' => $key]);
+
+        return true;
+    }
+
+    public function removeBotKey(Bot $bot): int
+    {
+        return $this->bots()->detach($bot);
+    }
+
     /**
      * Get the attributes that should be cast.
      *
